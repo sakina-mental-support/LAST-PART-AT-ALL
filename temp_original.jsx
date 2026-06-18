@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import Badge from './Badge';
 import { useEmotionalBrain } from '../store/useEmotionalBrain';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,29 +8,33 @@ const playlists = {
     Anxious: {
         label: 'Calm Ambient', icon: 'water', accentColor: '#6366f1',
         tracks: [
-            { title: 'Ocean Waves', artist: 'Nature Healing', duration: '∞', src: 'https://www.soundjay.com/nature/sounds/ocean-wave-1.mp3' },
-            { title: 'Soft Rain', artist: 'Ambient Earth', duration: '∞', src: 'https://www.soundjay.com/nature/sounds/rain-01.mp3' },
-            { title: 'Light Wind', artist: 'Nature Sounds', duration: '∞', src: 'https://www.soundjay.com/nature/sounds/wind-in-trees-1.mp3' },
+            { title: 'Ocean Waves', artist: 'Nature Healing', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/ocean-wave-1.mp3' },
+            { title: 'Soft Rain', artist: 'Ambient Earth', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/rain-01.mp3' },
+            { title: 'Light Wind', artist: 'Nature Sounds', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/wind-in-trees-1.mp3' },
         ]
     },
     Stressed: {
         label: 'Forest Immersion', icon: 'forest', accentColor: '#00adef',
         tracks: [
-            { title: 'Forest Birds', artist: 'Earth Collective', duration: '∞', src: 'https://www.youtube.com/watch?v=Qm846KdZN_c' },
-            { title: 'Flowing Stream', artist: 'Nature Sounds', duration: '∞', src: 'https://www.youtube.com/watch?v=IvjMgVS6kng' },
-            { title: 'Rain on Leaves', artist: 'Ambient Forest', duration: '∞', src: 'https://www.youtube.com/watch?v=ca02mjqRDDI' },
+            { title: 'Forest Birds', artist: 'Earth Collective', duration: 'Γê₧', src: 'https://www.youtube.com/watch?v=Qm846KdZN_c' },
+            { title: 'Flowing Stream', artist: 'Nature Sounds', duration: 'Γê₧', src: 'https://www.youtube.com/watch?v=IvjMgVS6kng' },
+            { title: 'Rain on Leaves', artist: 'Ambient Forest', duration: 'Γê₧', src: 'https://www.youtube.com/watch?v=ca02mjqRDDI' },
         ]
     },
     Calm: {
         label: 'Focus Flow', icon: 'headphones', accentColor: '#fbbf24',
-        tracks: []
+        tracks: [
+            { title: 'Morning Birds', artist: 'Dawn Collection', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/birds-in-the-trees-2.mp3' },
+            { title: 'Light Brook', artist: 'Forest Sound', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/river-2.mp3' },
+            { title: 'Breeze', artist: 'Ambient Wind', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/wind-in-trees-2.mp3' },
+        ]
     },
     Balanced: {
         label: 'Neural Balance', icon: 'spa', accentColor: '#00adef',
         tracks: [
-            { title: 'Ocean Breath', artist: 'Nature Healing', duration: '∞', src: 'https://www.soundjay.com/nature/sounds/ocean-wave-1.mp3' },
-            { title: 'Forest Morning', artist: 'Earth Collective', duration: '∞', src: 'https://www.soundjay.com/nature/sounds/birds-in-the-trees-1.mp3' },
-            { title: 'Rain Flow', artist: 'Ambient Earth', duration: '∞', src: 'https://www.soundjay.com/nature/sounds/rain-01.mp3' },
+            { title: 'Ocean Breath', artist: 'Nature Healing', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/ocean-wave-1.mp3' },
+            { title: 'Forest Morning', artist: 'Earth Collective', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/birds-in-the-trees-1.mp3' },
+            { title: 'Rain Flow', artist: 'Ambient Earth', duration: 'Γê₧', src: 'https://www.soundjay.com/nature/sounds/rain-01.mp3' },
         ]
     }
 };
@@ -315,10 +319,10 @@ const MusicTherapy = () => {
     const formatTime = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
     return (
-        <div className="py-6 font-['Inter'] animate-fade-in space-y-10 pb-16">
+        <div className="py-12 font-['Inter'] animate-fade-in space-y-20 pb-32">
             
-            {/* 🚀 EASY ENGLISH HEADER */}
-            <header className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            {/* ≡ƒÜÇ EASY ENGLISH HEADER */}
+            <header className="flex flex-col md:flex-row md:items-end justify-between gap-12">
                 <div className="space-y-6">
                     <Badge variant="solid" color="teal" size="sm" className="tracking-[10px] uppercase">Sakina Sound v4.0</Badge>
                     <h1 className="text-6xl sm:text-9xl font-black text-[#091426] tracking-tighter uppercase leading-[0.8]">
@@ -328,7 +332,7 @@ const MusicTherapy = () => {
                 </div>
             </header>
 
-            {/* 🎵 NOW PLAYING - ENHANCED BARS */}
+            {/* ≡ƒÄ╡ NOW PLAYING - ENHANCED BARS */}
             <AnimatePresence>
                 {(activeTrackIdx !== null || activeTone) && (
                     <motion.div 
@@ -364,16 +368,22 @@ const MusicTherapy = () => {
                 )}
             </AnimatePresence>
 
-            {/* 🎹 NEURAL TRACKS */}
-            <section className="space-y-5 pt-2">
-                <div className="flex justify-end">
-                    <div className="flex items-center gap-3 bg-white/60 backdrop-blur-md px-5 py-3 rounded-[20px] border border-white/30 shadow-sm">
+            {/* ≡ƒÄ╣ NEURAL TRACKS - UNIFIED DESIGN */}
+            <section className="space-y-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div className="space-y-4">
+                        <Badge variant="subtle" color="teal" size="sm" className="tracking-[6px] !bg-[#00adef]/10 !text-[#00adef]">Nature Healing</Badge>
+                        <h2 className="text-4xl sm:text-6xl font-black text-[#091426] tracking-tighter uppercase">
+                            Calm <span className="text-[#00adef]">Music.</span>
+                        </h2>
+                    </div>
+                    <div className="flex items-center gap-4 bg-white/50 backdrop-blur-md p-4 rounded-[24px] border border-white/20">
                         <div className="w-2 h-2 rounded-full bg-[#00adef] animate-ping"></div>
                         <span className="text-[10px] font-black uppercase tracking-[3px] text-[#091426]/60">Helping you feel: {mood}</span>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {playlist.tracks.map((track, i) => (
                         <TrackCard 
                             key={i} 
@@ -386,7 +396,7 @@ const MusicTherapy = () => {
                 </div>
             </section>
 
-            {/* 🌌 BINAURAL ENGINE - FUTURISTIC REDESIGN */}
+            {/* ≡ƒîî BINAURAL ENGINE - FUTURISTIC REDESIGN */}
             <section className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#00adef]/10 via-transparent to-[#6366f1]/10 rounded-[80px] blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-[3000ms]"></div>
                 <div className="relative z-10 bg-[#091426] rounded-[60px] sm:rounded-[80px] p-12 sm:p-24 border border-white/5 shadow-2xl overflow-hidden">
