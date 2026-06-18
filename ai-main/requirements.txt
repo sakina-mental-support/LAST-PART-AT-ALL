@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+google-generativeai
+openai
+transformers
+torch
+edge-tts
+tf-keras

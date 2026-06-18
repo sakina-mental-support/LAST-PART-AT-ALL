@@ -1,0 +1,11 @@
+node_modules
+.env
+dist
+.DS_Store
+__pycache__
+*.pyc
+.gemini
+.tempmediaStorage
+build
+package-lock.json
+*.log
